@@ -1,13 +1,3 @@
-import xml.etree.ElementTree as ET
-import os
-import numpy as np
-import pandas as pd
-
-data_dir = r'C:\Users\원종복\Desktop\paper_list\acl\acl-anthology\data\xml'
-year = 2023
-conference_type = 'acl'
-target_volume_id = 'long'
-
 # load paper data from xml file
 def load_paper_info(data_dir, year, conference_type, target_volume_id):
     filename = f'{year}.{conference_type}.xml'
@@ -34,9 +24,3 @@ def load_paper_info(data_dir, year, conference_type, target_volume_id):
     paper_info.set_index('paper_id', inplace=True)
     
     return paper_info
-
-paper_info = load_paper_info(data_dir=data_dir, year=year,
-                             conference_type=conference_type,
-                             target_volume_id=target_volume_id)
-
-print(paper_info.head())
