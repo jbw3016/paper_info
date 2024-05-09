@@ -8,7 +8,7 @@ year = 2023
 conference_type = 'acl'
 target_volume_id = 'long'
 
-# xml 파일에서 paper 정보를 불러오기
+# load paper data from xml file
 def load_paper_info(data_dir, year, conference_type, target_volume_id):
     filename = f'{year}.{conference_type}.xml'
     filepath = os.path.join(data_dir, filename)    
@@ -38,7 +38,5 @@ def load_paper_info(data_dir, year, conference_type, target_volume_id):
 paper_info = load_paper_info(data_dir=data_dir, year=year,
                              conference_type=conference_type,
                              target_volume_id=target_volume_id)
-
-
 
 print(paper_info.head())
